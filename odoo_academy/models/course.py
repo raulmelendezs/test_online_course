@@ -20,8 +20,12 @@ class Course(models.Model):
     
     # Fields for Pricing
     base_price = fields.Float(string='Base Price', digits='Product Price', default=0.00)
-    additional_fee = fields.Float(string='Additional Fee', digits='Product Price', default=10.00)
+    additional_fee = fields.Float(string='Additional Fee', digits='Product Price', default=0.00)
     total_price = fields.Float(string='Total Price', digits='Product Price', compute='_compute_total_price', readonly=True)
+    
+    sessions_id = fields.One2many(comodel_name='academy.session',
+                                 inverse_name='course_id',
+                                 string='Sessions')
     
     # --------------------------------------- Compute Methods ---------------------------------- 
     # Use Computed /depends field instead of OnChange in Odoo 16
