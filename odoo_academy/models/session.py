@@ -23,7 +23,7 @@ class Session(models.Model):
                              default=fields.Date.today)
     
     duration = fields.Integer(string='Session Days',
-                              defaul=1)
+                              default=1)
     
     end_date = fields.Date(string='End Date',
                            compute='_compute_end_date',
