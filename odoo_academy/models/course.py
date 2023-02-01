@@ -32,10 +32,10 @@ class Course(models.Model):
     @api.depends('base_price', 'additional_fee')
     def _compute_total_price(self):
         for record in self:
-            if record.base_price < 0.00:
+            if self.base_price < 0.00:
                 raise UserError(('Base Price cannot be set as Negative.'))
             
-            record.total_price = record.base_price + record.additional_fee
+            self.total_price = self.base_price + self.additional_fee
     
     # --------------------------------------- Constrains Methods ----------------------------------
     @api.constrains('additional_fee')
