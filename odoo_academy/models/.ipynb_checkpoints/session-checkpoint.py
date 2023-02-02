@@ -16,7 +16,7 @@ class Session(models.Model):
     
     instructor_id = fields.Many2one(comodel_name='res.partner', string='Instructor')
     
-    students_ids = fields.Many2many(comodel_name='res.partner', string='Students')
+    student_ids = fields.Many2many(comodel_name='res.partner', string='Students')
     
     #--Sesion video 7 
     start_date = fields.Date(string='Start Date',
