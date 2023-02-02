@@ -21,11 +21,11 @@
             </field>
         </record>
         
-        <record model="ir.actions.act_window" id="launch_sale_window">
+        <record model="ir.actions.act_window" id="launch_sale_wizard">
             <field name="name">Create Sale Order</field>
             <field name="res_model">academy.sale.wizard</field>
             <field name="view_mode">form</field>
-            <field name="binding_model_id" ref="model_academy_session"/>
+            <field name="binding_model_id" ref="academy.session"/>
             <field name="target">new</field>
         </record>
     </data>   
